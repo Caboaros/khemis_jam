@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46735a95eb02e90498b3b86c675832af, type: 3}
+  m_Name: TestMap
+  m_EditorClassIdentifier: 
+  tilePrefab: {fileID: 8626623227885338067, guid: c96fb4dcdceec364f9d5def1b7efd62b,
+    type: 3}
+  columnsAmount: 20
+  rowsAmount: 20
+  holePercentage: 0
