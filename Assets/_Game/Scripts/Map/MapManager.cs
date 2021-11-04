@@ -20,10 +20,11 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(InstantiateMap());
+        //StartCoroutine(InstantiateMap());
+        InstantiateMap();
     }
 
-    private IEnumerator InstantiateMap()
+    private void InstantiateMap()
     {
         WaitForSeconds wait = new WaitForSeconds(.01f);
         
@@ -43,7 +44,7 @@ public class MapManager : MonoBehaviour
                 _mapTiles.Add(gridPosition, newTile);
                 newTile.Init(grid.GetCellCenterLocal(gridPosition), gridPosition, totalCells);
                 totalCells--;
-                yield return wait;
+                //yield return null;
             }
         }
     }
