@@ -10,7 +10,13 @@ namespace _Game.Scripts.Player
         public MovementDirection MovementDirection
         {
             get => _movementDirection;
-            set { _movementDirection = value; }
+            set
+            {
+                if (_movementDirection == value) return;
+                
+                _movementDirection = value;
+                _animation.SetDirection(_movementDirection);
+            }
         }
 
         public bool CanMove
@@ -29,14 +35,23 @@ namespace _Game.Scripts.Player
         private Transform _transform;
         private Rigidbody2D _rigidbody;
         private float _sin = 0;
+        private PlayerAnimations _animation;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _animation = GetComponentInChildren<PlayerAnimations>();
+            
             _transform = transform;
             _position = _rigidbody.position;
             _rendererPosition = rendererTransform.localPosition;
             _canMove = true;
+        }
+
+        public void StopMovement()
+        {
+            _canMove = false;
+            _rigidbody.velocity = Vector2.zero;
         }
 
         private void FixedUpdate()
@@ -59,6 +74,8 @@ namespace _Game.Scripts.Player
             _sin += Time.deltaTime * 25 * vertical;
             _rendererPosition.y = Mathf.Sin(_sin) / 15f;
             //rendererTransform.localPosition = _rendererPosition;
+            
+            _animation.MovementAnimation(vertical, horizontal);
 
             if (vertical == 0 && horizontal == 0) return;
             

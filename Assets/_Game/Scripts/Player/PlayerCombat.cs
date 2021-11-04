@@ -28,12 +28,13 @@ namespace _Game.Scripts.Player
 
         private void Awake()
         {
-            _animations = GetComponent<PlayerAnimations>();
+            _animations = GetComponentInChildren<PlayerAnimations>();
             _movement = GetComponent<PlayerMovement>();
         }
 
         public void StartAttack()
         {
+            _movement.StopMovement();
             _animations.PlayAttackAnimation(Attack);
         }
 
@@ -88,6 +89,8 @@ namespace _Game.Scripts.Player
                     enemyLife.TakeDamage(Damage, attackPoint.position);
                 }
             }
+            
+            _movement.CanMove = true;
         }
 
         private void OnDrawGizmosSelected()

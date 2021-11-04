@@ -20,6 +20,7 @@ namespace _Game.Scripts.Player
                 if(_isDead) return;
                 
                 _currentHeartAmount = Mathf.Clamp(value, 0, maxHearts);
+                
                 DataEvent.Notify(new PlayerHeartsStruct(_currentHeartAmount));
 
                 if (_currentHeartAmount <= 0)
