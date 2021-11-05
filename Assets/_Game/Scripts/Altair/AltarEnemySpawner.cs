@@ -25,6 +25,8 @@ public class AltarEnemySpawner : MonoBehaviour
     private AltarEnemySpawnEffect spawnMinionEffect;
     [SerializeField]
     private AltarEnemySpawnEffect spawnBossEffect;
+    [SerializeField]
+    private AltarLine altarLine;
 
     private int currentWave = 0;
     private int currentEnemiesAlive = 0;
@@ -111,6 +113,8 @@ public class AltarEnemySpawner : MonoBehaviour
         altarStateManager.OnAltarComplete();
 
         currentState = AltarState.COMPLETE;
+
+        altarLine.ActivateLine();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

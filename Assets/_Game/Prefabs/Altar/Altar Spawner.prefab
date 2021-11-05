@@ -1,5 +1,150 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &137792020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137792022}
+  - component: {fileID: 137792021}
+  - component: {fileID: 137792023}
+  m_Layer: 0
+  m_Name: AltarLine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &137792022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137792020}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.370001, y: -1.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4428729156601833849}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &137792021
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137792020}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b8b2dadd28ad88c49988de4a2d5756ba, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 469367197
+  m_SortingLayer: 1
+  m_SortingOrder: -1
+  m_Positions:
+  - {x: -8.061437, y: 0.058042407, z: 0}
+  - {x: -5.2254915, y: 1.087798, z: 0}
+  - {x: -1.8334665, y: 3.4274921, z: 0}
+  - {x: 0.28322023, y: 5.6943226, z: 0}
+  - {x: 3.6720934, y: 7.3557343, z: 0}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 2
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0, g: 0.70051455, b: 1, a: 1}
+      key1: {r: 0, g: 0.70051455, b: 1, a: 1}
+      key2: {r: 0, g: 0.64903307, b: 1, a: 1}
+      key3: {r: 0, g: 0, b: 0, a: 1}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 65342
+      ctime3: 65535
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 65535
+      atime3: 65535
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 1
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_UseWorldSpace: 0
+  m_Loop: 0
+--- !u!114 &137792023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137792020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d1ebce542fc86458f5e6c0a6dc6028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationDuration: 3
 --- !u!1 &4428729156601833848
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,6 +177,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4428729157378619369}
+  - {fileID: 137792022}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,14 +193,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330097cf2bf10514e910df7c4ae02b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossEnemy: {fileID: 2195736039588824940, guid: 58504cbf042edf8439879e7c0efcdaf6, type: 3}
+  bossEnemy: {fileID: 2195736039588824940, guid: 58504cbf042edf8439879e7c0efcdaf6,
+    type: 3}
   possibleEnemies:
   - {fileID: 1275930548494285012, guid: d8f92b94a2a9d134e85fc1889cd42c4b, type: 3}
   enemiesCountPerWave: 03000000040000000500000005000000
   spawnRadius: 5
   altarStateManager: {fileID: 4428729157378619370}
-  spawnMinionEffect: {fileID: 3496467003796851146, guid: 31ca7b584bc717b40968195a339384df, type: 3}
-  spawnBossEffect: {fileID: 3496467003796851146, guid: 31ca7b584bc717b40968195a339384df, type: 3}
+  spawnMinionEffect: {fileID: 3496467003796851146, guid: 31ca7b584bc717b40968195a339384df,
+    type: 3}
+  spawnBossEffect: {fileID: 3496467003796851146, guid: 31ca7b584bc717b40968195a339384df,
+    type: 3}
+  altarLine: {fileID: 137792023}
   currentState: 0
 --- !u!212 &4428729156601833851
 SpriteRenderer:
@@ -71,7 +221,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -96,7 +245,8 @@ SpriteRenderer:
   m_SortingLayerID: -561205597
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8128202103285108291, guid: 22331011776cd2741b3571464bc40430, type: 3}
+  m_Sprite: {fileID: -8128202103285108291, guid: 22331011776cd2741b3571464bc40430,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -266,14 +416,20 @@ MonoBehaviour:
   altarAudioSource: {fileID: 4428729156601833852}
   altarEffectsAchor: {fileID: 4428729157378619369}
   altarIdle:
-    stateSprite: {fileID: 7338493747931955319, guid: 22331011776cd2741b3571464bc40430, type: 3}
-    stateEffects: {fileID: 2983949457522394549, guid: 3a2e67502b215ee4d904c3a84cb5e294, type: 3}
+    stateSprite: {fileID: 7338493747931955319, guid: 22331011776cd2741b3571464bc40430,
+      type: 3}
+    stateEffects: {fileID: 2983949457522394549, guid: 3a2e67502b215ee4d904c3a84cb5e294,
+      type: 3}
     onEnterStateSound: {fileID: 0}
   altarInProgress:
-    stateSprite: {fileID: -8128202103285108291, guid: 22331011776cd2741b3571464bc40430, type: 3}
-    stateEffects: {fileID: 2522751827181934618, guid: 474d19b9194aef9489622a5c6ce62305, type: 3}
+    stateSprite: {fileID: -8128202103285108291, guid: 22331011776cd2741b3571464bc40430,
+      type: 3}
+    stateEffects: {fileID: 2522751827181934618, guid: 474d19b9194aef9489622a5c6ce62305,
+      type: 3}
     onEnterStateSound: {fileID: 8300000, guid: 2e7207720d96f664b8256757159f540c, type: 3}
   altarComplete:
-    stateSprite: {fileID: -8340593612209989490, guid: 22331011776cd2741b3571464bc40430, type: 3}
-    stateEffects: {fileID: 4484784861603684819, guid: aff34da3ee023094992b497af5292cdd, type: 3}
+    stateSprite: {fileID: -8340593612209989490, guid: 22331011776cd2741b3571464bc40430,
+      type: 3}
+    stateEffects: {fileID: 4484784861603684819, guid: aff34da3ee023094992b497af5292cdd,
+      type: 3}
     onEnterStateSound: {fileID: 8300000, guid: 41380d4d9039c0849a29bad127a44c3d, type: 3}
