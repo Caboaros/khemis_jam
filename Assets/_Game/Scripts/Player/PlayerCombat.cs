@@ -17,25 +17,39 @@ namespace _Game.Scripts.Player
         [SerializeField] private Transform attackPoint;
         [SerializeField] private float attackRange;
         [SerializeField] private LayerMask enemyLayers;
-    
-        private PlayerAnimations _animations;
-        private PlayerMovement _movement;
+
+        private int _sequence;
         
         public int Damage
         {
             get => CurrentWeapon != null ? CurrentWeapon.damage : 1;
         }
 
-        private void Awake()
+        public bool canAttack;
+
+        private float _attackDelay = 0;
+
+        private void Start()
         {
-            _animations = GetComponentInChildren<PlayerAnimations>();
-            _movement = GetComponent<PlayerMovement>();
+            _sequence = 0;
+            canAttack = true;
+        }
+        
+        private void Update()
+        {
+            //if(canAttack && )
         }
 
         public void StartAttack()
         {
-            _movement.StopMovement();
-            _animations.PlayAttackAnimation(Attack);
+            if(!canAttack) return;
+
+            PlayerController.Instance.Status = PlayerStatus.Attack;
+            
+            _sequence = Mathf.Clamp(_sequence + 1, 0, 2);
+            
+            PlayerController.Instance.Movement.StopMovement();
+            PlayerController.Instance.Animations.PlayAttackAnimation(Attack, _sequence);
         }
 
         public void EquipWeapon(SO_Weapon weapon)
@@ -60,7 +74,7 @@ namespace _Game.Scripts.Player
 
         private Vector3 GetSpawnDirection()
         {
-            switch (_movement.MovementDirection)
+            switch (PlayerController.Instance.Movement.MovementDirection)
             {
                 case MovementDirection.Top:
                     return new Vector3(0, 1);
@@ -87,10 +101,10 @@ namespace _Game.Scripts.Player
                 {
                     print($"Inimigo: {enemy.transform.root.name} tomou dano de {Damage}");
                     enemyLife.TakeDamage(Damage, attackPoint.position);
+                    CameraShakeController.Shake();
+                        
                 }
             }
-            
-            _movement.CanMove = true;
         }
 
         private void OnDrawGizmosSelected()

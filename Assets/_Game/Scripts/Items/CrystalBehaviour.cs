@@ -6,9 +6,7 @@ namespace _Game.Scripts.Items
     {
         public override void OnCollect(PlayerController player)
         {
-            player.Inventory.CrystalsCollected++;
-            
-            Destroy(gameObject);
+            MoveToPlayer(player.transform, () => player.Inventory.CrystalsCollected++);
         }
     }
 }

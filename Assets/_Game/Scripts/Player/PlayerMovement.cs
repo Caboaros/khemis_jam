@@ -15,7 +15,7 @@ namespace _Game.Scripts.Player
                 if (_movementDirection == value) return;
                 
                 _movementDirection = value;
-                _animation.SetDirection(_movementDirection);
+                PlayerController.Instance.Animations.SetDirection(_movementDirection);
             }
         }
 
@@ -31,20 +31,12 @@ namespace _Game.Scripts.Player
         
         private bool _canMove;
         private Vector2 _position = Vector2.zero;
-        private Vector2 _rendererPosition;
-        private Transform _transform;
         private Rigidbody2D _rigidbody;
-        private float _sin = 0;
-        private PlayerAnimations _animation;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            _animation = GetComponentInChildren<PlayerAnimations>();
-            
-            _transform = transform;
             _position = _rigidbody.position;
-            _rendererPosition = rendererTransform.localPosition;
             _canMove = true;
         }
 
@@ -54,7 +46,7 @@ namespace _Game.Scripts.Player
             _rigidbody.velocity = Vector2.zero;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             if (!_canMove) return;
 
@@ -70,14 +62,16 @@ namespace _Game.Scripts.Player
             {
                 _position.y += vertical * movementSpeed * Time.deltaTime;
             }
-
-            _sin += Time.deltaTime * 25 * vertical;
-            _rendererPosition.y = Mathf.Sin(_sin) / 15f;
-            //rendererTransform.localPosition = _rendererPosition;
             
-            _animation.MovementAnimation(vertical, horizontal);
+            PlayerController.Instance.Animations.MovementAnimation(vertical, horizontal);
 
-            if (vertical == 0 && horizontal == 0) return;
+            if (vertical == 0 && horizontal == 0)
+            {
+                PlayerController.Instance.Status = PlayerStatus.Idle;
+                return;
+            }
+            
+            PlayerController.Instance.Status = PlayerStatus.Walking;
             
             inputDirection = new Vector2(horizontal, vertical);
             MovementDirection = GetDirection(inputDirection);

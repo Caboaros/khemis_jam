@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -53,7 +54,8 @@ namespace _Game.Scripts.Enemies
                 HeartsAmount -= damage;
             }
 
-            _rigidbody.AddForce((transform.position - damageSourcePosition).normalized * 2, ForceMode2D.Impulse);
+            _rigidbody.DOMove(transform.position + ((transform.position - damageSourcePosition).normalized) * .5f,
+                .25f);
         }
 
         private void Die()

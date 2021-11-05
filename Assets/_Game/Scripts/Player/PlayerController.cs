@@ -4,18 +4,28 @@ namespace _Game.Scripts.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        public PlayerCombat Combat;
-        public PlayerLife Life;
-        public PlayerAnimations Animations;
-        public PlayerMovement Movement;
-        public PlayerInventory Inventory;
+        public static PlayerController Instance { get; set; }
+
+        public PlayerStatus Status;
+
+        [HideInInspector] public PlayerCombat Combat;
+        [HideInInspector] public PlayerLife Life;
+        [HideInInspector] public PlayerAnimations Animations;
+        [HideInInspector] public PlayerMovement Movement;
+        [HideInInspector] public PlayerInventory Inventory;
 
         private void Awake()
         {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+
             Combat = GetComponent<PlayerCombat>();
             Life = GetComponent<PlayerLife>();
             Movement = GetComponent<PlayerMovement>();
             Inventory = GetComponent<PlayerInventory>();
+            Animations = GetComponentInChildren<PlayerAnimations>();
         }
 
         private void Start()
@@ -51,6 +61,13 @@ namespace _Game.Scripts.Player
             print("Game Over!");
             Animations.PlayDyingAnimation();
             Movement.CanMove = false;
+
+            Status = PlayerStatus.Dead;
         }
+    }
+
+    public enum PlayerStatus
+    {
+        Idle, Walking, Attack, Dead
     }
 }

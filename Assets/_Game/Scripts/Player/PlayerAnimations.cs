@@ -21,16 +21,24 @@ namespace _Game.Scripts.Player
         private static readonly int Vertical = Animator.StringToHash("Vertical");
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
         private static readonly int Direction = Animator.StringToHash("Direction");
+        private static readonly int Sequence = Animator.StringToHash("Sequence");
 
         public bool IsWalking
         {
             set => animator.SetBool(Walking, value);
         }
 
-        public void PlayAttackAnimation(Action onAttack)
+        public void PlayAttackAnimation(Action onAttack, int sequence)
         {
+            animator.SetInteger(Sequence, sequence);
             animator.SetTrigger(Attack);
+            
             _onAttack = onAttack;
+        }
+
+        public void ResetSequence()
+        {
+            animator.SetInteger(Sequence, 0);
         }
 
         public void PlayDyingAnimation()
@@ -73,6 +81,12 @@ namespace _Game.Scripts.Player
         public void OnAttackEvent()
         {
             _onAttack?.Invoke();
+        }
+
+        public void OnEndAttackEvent()
+        {
+            PlayerController.Instance.Combat.canAttack = true;
+            PlayerController.Instance.Movement.CanMove = true;
         }
     }
 }
