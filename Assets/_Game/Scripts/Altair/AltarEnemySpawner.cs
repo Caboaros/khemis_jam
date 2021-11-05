@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,10 +28,19 @@ public class AltarEnemySpawner : MonoBehaviour
 
     private int currentWave = 0;
     private int currentEnemiesAlive = 0;
+    [ReadOnly, SerializeField]
+    private AltarState currentState;
+
+    private void Awake()
+    {
+        InitializeAltar();
+    }
 
     public void InitializeAltar()
     {
         altarStateManager.OnAltarInitialization();
+
+        currentState = AltarState.IDLE;
     }
 
     public void ActivateAltar()
@@ -38,15 +48,23 @@ public class AltarEnemySpawner : MonoBehaviour
         altarStateManager.OnAltarActivate();
 
         Invoke(nameof(SpawnNextWave), 1);
+
+        currentState = AltarState.INPROGRESS;
     }
 
     private void SpawnNextWave()
     {
-        for(int i = enemiesCountPerWave[currentWave]; i >= 0; i--)
+        print(currentWave);
+
+        for(int i = enemiesCountPerWave[currentWave] - 1; i >= 0; i--)
         {
             AltarEnemySpawnEffect currentSpawnEffect = Instantiate(spawnMinionEffect, transform.position, Quaternion.identity);
 
-            currentSpawnEffect.Initialize(Random.insideUnitCircle * spawnRadius, possibleEnemies[Random.Range(0, possibleEnemies.Count)], this);
+            Vector2 spawnPoint = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
+
+            currentSpawnEffect.Initialize(spawnPoint, possibleEnemies[Random.Range(0, possibleEnemies.Count)], this);
+
+            currentEnemiesAlive++;
         }
     }
 
@@ -78,22 +96,44 @@ public class AltarEnemySpawner : MonoBehaviour
     {
         AltarEnemySpawnEffect currentSpawnEffect = Instantiate(spawnMinionEffect, transform.position, Quaternion.identity);
 
-        currentSpawnEffect.Initialize(Random.insideUnitCircle * spawnRadius, bossEnemy, this);
+        Vector2 spawnPoint = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
+
+        currentSpawnEffect.Initialize(spawnPoint, bossEnemy, this);
     }
 
-    private void OnBossDies()
+    public void OnBossDies()
     {
         CompleteAltar();
     }
 
-    public void CompleteAltar()
+    private void CompleteAltar()
     {
         altarStateManager.OnAltarComplete();
+
+        currentState = AltarState.COMPLETE;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(currentState == AltarState.IDLE)
+        {
+            if(collision.gameObject.layer == 8) //Layer do PLAYER
+            {
+                ActivateAltar();
+            }
+        }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, spawnRadius);
+    }
+
+    public enum AltarState
+    {
+        IDLE,
+        INPROGRESS,
+        COMPLETE
     }
 }

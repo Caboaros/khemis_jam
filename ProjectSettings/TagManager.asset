@@ -50,3 +50,6 @@ TagManager:
   - name: Item
     uniqueID: 2608463897
     locked: 0
+  - name: VFX
+    uniqueID: 2145530495
+    locked: 0
