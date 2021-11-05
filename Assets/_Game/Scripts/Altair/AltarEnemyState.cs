@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class AltarEnemyState
 {
-    private static GameObject currentSpawnedEffect;
-    public static GameObject CurrentSpawnedEffect
+    private GameObject currentSpawnedEffect;
+    public GameObject CurrentSpawnedEffect
     {
         get
         {
@@ -36,5 +36,10 @@ public class AltarEnemyState
 
         if(stateEffects)
             CurrentSpawnedEffect = Object.Instantiate(stateEffects, effectsAnchor);
+    }
+
+    public void OnExitState()
+    {
+        CurrentSpawnedEffect = null;
     }
 }

@@ -27,11 +27,15 @@ public class AltarEnemyStateManager : MonoBehaviour
 
     public void OnAltarActivate()
     {
+        altarIdle.OnExitState();
+
         altarInProgress.OnEnterState(altarSpriteRenderer, altarAudioSource, altarEffectsAchor);
     }
 
     public void OnAltarComplete()
     {
+        altarInProgress.OnExitState();
+
         altarComplete.OnEnterState(altarSpriteRenderer, altarAudioSource, altarEffectsAchor);
     }
 }

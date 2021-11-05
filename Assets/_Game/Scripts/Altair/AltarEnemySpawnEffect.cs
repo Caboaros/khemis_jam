@@ -20,6 +20,13 @@ public class AltarEnemySpawnEffect : MonoBehaviour
             AltarEnemyLife spawnedEnemyLife = Instantiate(enemyToSpawn, transform.position, Quaternion.identity).GetComponent<AltarEnemyLife>();
 
             spawnedEnemyLife.sourceSpawner = sourceSpawner;
+
+            Invoke(nameof(DestroySelf), 2);
         }); 
+    }
+
+    private void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 }

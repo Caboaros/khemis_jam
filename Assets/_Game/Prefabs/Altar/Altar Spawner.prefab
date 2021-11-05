@@ -93,8 +93,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -561205597
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -8128202103285108291, guid: 22331011776cd2741b3571464bc40430, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -264,16 +264,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altarSpriteRenderer: {fileID: 4428729156601833851}
   altarAudioSource: {fileID: 4428729156601833852}
-  altarEffectsAchor: {fileID: 0}
+  altarEffectsAchor: {fileID: 4428729157378619369}
   altarIdle:
     stateSprite: {fileID: 7338493747931955319, guid: 22331011776cd2741b3571464bc40430, type: 3}
-    stateEffects: {fileID: 0}
+    stateEffects: {fileID: 2983949457522394549, guid: 3a2e67502b215ee4d904c3a84cb5e294, type: 3}
     onEnterStateSound: {fileID: 0}
   altarInProgress:
     stateSprite: {fileID: -8128202103285108291, guid: 22331011776cd2741b3571464bc40430, type: 3}
-    stateEffects: {fileID: 0}
+    stateEffects: {fileID: 2522751827181934618, guid: 474d19b9194aef9489622a5c6ce62305, type: 3}
     onEnterStateSound: {fileID: 8300000, guid: 2e7207720d96f664b8256757159f540c, type: 3}
   altarComplete:
     stateSprite: {fileID: -8340593612209989490, guid: 22331011776cd2741b3571464bc40430, type: 3}
-    stateEffects: {fileID: 0}
+    stateEffects: {fileID: 4484784861603684819, guid: aff34da3ee023094992b497af5292cdd, type: 3}
     onEnterStateSound: {fileID: 8300000, guid: 41380d4d9039c0849a29bad127a44c3d, type: 3}
