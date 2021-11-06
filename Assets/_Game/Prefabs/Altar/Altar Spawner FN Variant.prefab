@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5890417390004191207
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4428729156601833848, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_Name
+      value: Altar Spawner FN Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833849, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428729156601833851, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 03641f84b34b577469d9fd30371f4b79,
+        type: 3}
+    - target: {fileID: 4428729157378619370, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: altarIdle.stateSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 03641f84b34b577469d9fd30371f4b79,
+        type: 3}
+    - target: {fileID: 4428729157378619370, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: altarComplete.stateSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eeb4e0307421bb847ad3b2a8533bc067,
+        type: 3}
+    - target: {fileID: 4428729157378619370, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: altarInProgress.stateSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 837f20555fab2834dae85775cb058352,
+        type: 3}
+    - target: {fileID: 4428729157378619370, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: altarInProgress.stateEffects
+      value: 
+      objectReference: {fileID: 2522751827181934618, guid: 611ec3911b942a94ba93a29574711f10,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40e25e86acd4ba3488afdb2aa9c9aab7, type: 3}
