@@ -47,6 +47,11 @@ namespace _Game.Scripts.Enemies
             HeartsAmount = maxLife;
         }
 
+        private void OnMouseDown()
+        {
+            TakeDamage(1, transform.position);
+        }
+
         public void TakeDamage(int damage, Vector3 damageSourcePosition)
         {
             if (!isImmortal)
@@ -58,7 +63,7 @@ namespace _Game.Scripts.Enemies
                 .25f);
         }
 
-        private void Die()
+        protected virtual void Die()
         {
             _isDead = true;
             _drop.DropCrystal();
