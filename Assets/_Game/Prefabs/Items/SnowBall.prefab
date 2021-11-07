@@ -17,6 +17,7 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: 846b07ab3a41b6649856df82cfa8cb4e, type: 2}
   spriteRenderer: {fileID: 7764096261410393721}
   weaponName: {fileID: 7764096260825838774}
+  attackRange: 0.5
 --- !u!1001 &4502854142548301061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,12 +59,12 @@ PrefabInstance:
     - target: {fileID: 6179718886060329934, guid: c93512e9d9554be46a8647e8909714a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.86
+      value: -10.22
       objectReference: {fileID: 0}
     - target: {fileID: 6179718886060329934, guid: c93512e9d9554be46a8647e8909714a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.91
+      value: -1.32
       objectReference: {fileID: 0}
     - target: {fileID: 6179718886060329934, guid: c93512e9d9554be46a8647e8909714a2,
         type: 3}
