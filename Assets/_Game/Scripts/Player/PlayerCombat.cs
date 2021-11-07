@@ -48,15 +48,20 @@ namespace _Game.Scripts.Player
 
             if (Input.GetButtonDown("Jump"))
             {
-                if (CurrentWeapon == null || CurrentWeapon.type == WeaponType.Melee)
+                if (CurrentWeapon == null)
                 {
                     StartMeleeAttack();
-                    return;
                 }
-
-                if (CurrentWeapon != null && CurrentWeapon.type == WeaponType.Throwable)
+                else
                 {
-                    StartThrowableAttack();
+                    if (CurrentWeapon.type == WeaponType.Throwable)
+                    {
+                        StartThrowableAttack();
+                    }
+                    else
+                    {
+                        StartWhipAttack();
+                    }
                 }
             }
         }
@@ -73,11 +78,23 @@ namespace _Game.Scripts.Player
             PlayerController.Instance.Animations.PlayPunchAttackAnimation(MeleeAttack, _sequence);
         }
 
+        private void StartWhipAttack()
+        {
+            _isAttacking = true;
+            _sequence = 3;
+
+            _currentAttackPoint = _attackPoints[_sequence - 1];
+
+            PlayerController.Instance.Status = PlayerStatus.Attack;
+            PlayerController.Instance.Movement.StopMovement();
+            PlayerController.Instance.Animations.PlayPunchAttackAnimation(MeleeAttack, _sequence);
+        }
+
         private void StartThrowableAttack()
         {
             _isAttacking = true;
             _sequence = 0;
-            
+
             PlayerController.Instance.Status = PlayerStatus.Attack;
             PlayerController.Instance.Movement.StopMovement();
             PlayerController.Instance.Animations.PlayThrowAttack(ThrowItem);
@@ -92,12 +109,26 @@ namespace _Game.Scripts.Player
             PlayerController.Instance.Animations.ResetSequence();
         }
 
-        public void EquipWeapon(SO_Weapon weapon)
+        public bool EquipWeapon(SO_Weapon weapon)
         {
+            if (CurrentWeapon != null)
+            {
+                return false;
+            }
+
             CurrentWeapon = weapon;
-            weaponSpriteRenderer.sprite = weapon.sprite;
+            if (weapon.type == WeaponType.Throwable)
+            {
+                weaponSpriteRenderer.sprite = weapon.sprite;
+            }
+            else
+            {
+                PlayerController.Instance.Animations.HasWhip = true;
+            }
 
             DataEvent.Notify(new WeaponEquippedStruct(weapon));
+
+            return true;
         }
 
         public void DropWeapon()
@@ -105,6 +136,11 @@ namespace _Game.Scripts.Player
             if (CurrentWeapon == null) return;
 
             ItemSpawner.SpawnWeapon(CurrentWeapon.id, transform.position + GetSpawnDirection());
+
+            if (CurrentWeapon.type == WeaponType.Melee)
+            {
+                PlayerController.Instance.Animations.HasWhip = false;
+            }
 
             CurrentWeapon = null;
             weaponSpriteRenderer.sprite = null;
@@ -196,12 +232,13 @@ namespace _Game.Scripts.Player
         private void ThrowItem()
         {
             if (CurrentWeapon == null) return;
-            
+
             if (!_isAttacking) return;
 
             _isAttacking = false;
-            
-            ItemSpawner.SpawnThrowable(CurrentWeapon.id, _currentThrowablePoint.position, (Vector2)_currentThrowablePoint.position - (Vector2)transform.position, 5, enemyLayers);
+
+            ItemSpawner.SpawnThrowable(CurrentWeapon.id, _currentThrowablePoint.position,
+                (Vector2)_currentThrowablePoint.position - (Vector2)transform.position, 5, enemyLayers);
 
             CurrentWeapon = null;
             weaponSpriteRenderer.sprite = null;
@@ -213,7 +250,7 @@ namespace _Game.Scripts.Player
             if (_currentAttackPoint == null) return;
 
             Gizmos.DrawWireSphere(_currentAttackPoint.transform.position, attackRange);
-            
+
             Gizmos.DrawLine(transform.position, _currentAttackPoint.transform.position);
         }
     }

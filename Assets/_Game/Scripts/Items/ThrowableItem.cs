@@ -58,10 +58,5 @@ namespace _Game.Scripts.Items
         {
             collider.enabled = false;
         }
-
-        private void DestroyObject()
-        {
-            Destroy(gameObject);
-        }
     }
 }

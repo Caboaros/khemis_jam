@@ -12,17 +12,30 @@ namespace _Game.Scripts.Player
         [SerializeField] private SkeletonDataAsset frontAsset;
         [SerializeField] private SkeletonDataAsset backAsset;
         [SerializeField] private SkeletonDataAsset sideAsset;
+        [Space]
+        [SerializeField] private RuntimeAnimatorController handAnimatorController;
+        [SerializeField] private RuntimeAnimatorController whipAnimatorController;
         
         private Action _onMeleeAttack;
         private Action _onThrow;
-        
-        private static readonly int Walking = Animator.StringToHash("IsWalking");
+
+        public bool HasWhip
+        {
+            set
+            {
+                animator.runtimeAnimatorController = value ? whipAnimatorController : handAnimatorController;
+                animator.SetInteger(Sequence, 0);
+                animator.SetInteger(Direction, (int)PlayerController.Instance.Movement.MovementDirection);
+            }
+        }
+
         private static readonly int Attack = Animator.StringToHash("Attack");
         private static readonly int Die = Animator.StringToHash("Die");
         private static readonly int Vertical = Animator.StringToHash("Vertical");
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
         private static readonly int Direction = Animator.StringToHash("Direction");
         private static readonly int Sequence = Animator.StringToHash("Sequence");
+        private static readonly int Hit = Animator.StringToHash("Hit");
 
         public void PlayPunchAttackAnimation(Action onAttack, int sequence)
         {
@@ -58,7 +71,7 @@ namespace _Game.Scripts.Player
 
         public void PlayHitAnimation()
         {
-            
+            animator.SetTrigger(Hit);
         }
 
         public void SetDirection(MovementDirection direction)
@@ -85,7 +98,6 @@ namespace _Game.Scripts.Player
             }
             
             mecanim.Initialize(true);
-            
             animator.SetInteger(Direction, (int)direction);
         }
 

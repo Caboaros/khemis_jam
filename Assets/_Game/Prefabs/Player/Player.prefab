@@ -625,6 +625,10 @@ MonoBehaviour:
   frontAsset: {fileID: 11400000, guid: ac3d2bcddf75e5647a41def4e677386f, type: 2}
   backAsset: {fileID: 11400000, guid: c54407ba7360d13439b05dd81a7eb669, type: 2}
   sideAsset: {fileID: 11400000, guid: b7e6dd7c34507604db30796b08052d82, type: 2}
+  handAnimatorController: {fileID: 9100000, guid: 6bfa6f2ac6e398c46b06cc57e91a8d3f,
+    type: 2}
+  whipAnimatorController: {fileID: 9100000, guid: 2170493bad148a546a6f3b1b68005b9e,
+    type: 2}
 --- !u!1 &4833987344308393146
 GameObject:
   m_ObjectHideFlags: 0

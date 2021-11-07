@@ -17,6 +17,7 @@ MonoBehaviour:
   heartsAmountText: {fileID: 1275930548411493334}
   poofEffectPrefab: {fileID: 4575044643930836757, guid: c33fd8103c228e446be9251f1ac14bc5,
     type: 3}
+  animations: {fileID: 4364076366832146653}
   sourceSpawner: {fileID: 0}
   isBoss: 0
 --- !u!1001 &857640588638625746
@@ -86,6 +87,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7480689824262000075, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1897131999795160833, guid: e22c4b8ed13ffc24ebf514a40824061d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e22c4b8ed13ffc24ebf514a40824061d, type: 3}
@@ -105,5 +111,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4364076366832146653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3996561795362195215, guid: e22c4b8ed13ffc24ebf514a40824061d,
+    type: 3}
+  m_PrefabInstance: {fileID: 857640588638625746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1186f0bc997fcb442b87322665d07938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

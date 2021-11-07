@@ -30,7 +30,14 @@ namespace _Game.Scripts.Items
 
         public override void OnCollect(PlayerController player)
         {
-            player.Combat.EquipWeapon(Data);
+            if (player.Combat.EquipWeapon(Data))
+            {
+                DestroyObject();
+            }
+        }
+        
+        protected void DestroyObject()
+        {
             Destroy(gameObject);
         }
     }
