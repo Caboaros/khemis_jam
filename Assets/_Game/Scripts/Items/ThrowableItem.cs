@@ -13,7 +13,7 @@ namespace _Game.Scripts.Items
         private float _speed;
         private LayerMask _layer;
         
-        public void Throw(Vector3 direction, float speed, LayerMask layer)
+        public virtual void Throw(Vector3 direction, float speed, LayerMask layer)
         {
             weaponName.enabled = false;
 
