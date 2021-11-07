@@ -6,7 +6,11 @@ using System;
 
 public class AltarLine : MonoBehaviour
 {
-    public float activationDuration = 3;
+    [SerializeField]
+    private HubPuzzle hubPuzzle;
+
+    public int runeIndex;
+    public float activationDuration = 4;
 
     private LineRenderer lineRenderer;
 
@@ -17,9 +21,9 @@ public class AltarLine : MonoBehaviour
 
     public void ActivateLine()
     {
-        DOTween.To(GetValue, SetValue, -2f, activationDuration).OnComplete(delegate 
+        DOTween.To(GetValue, SetValue, -1.8f, activationDuration).OnComplete(delegate 
         {
-            //Ativar HUB aqui
+            hubPuzzle.ActivateRune(runeIndex - 1);
         });
     }
 

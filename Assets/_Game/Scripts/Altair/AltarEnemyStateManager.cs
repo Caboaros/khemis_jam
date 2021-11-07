@@ -12,6 +12,13 @@ public class AltarEnemyStateManager : MonoBehaviour
     [SerializeField]
     private Transform altarEffectsAchor;
 
+    [Space(2)]
+    [SerializeField]
+    private SpriteRenderer runeSpriteRenderer;
+    [SerializeField]
+    private Sprite runeSprite;
+
+    [Header("States:")]
     [SerializeField]
     private AltarEnemyState altarIdle;
     [SerializeField]
@@ -37,5 +44,8 @@ public class AltarEnemyStateManager : MonoBehaviour
         altarInProgress.OnExitState();
 
         altarComplete.OnEnterState(altarSpriteRenderer, altarAudioSource, altarEffectsAchor);
+
+        runeSpriteRenderer.sprite = runeSprite;
+        runeSpriteRenderer.enabled = true;
     }
 }

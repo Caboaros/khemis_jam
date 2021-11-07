@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 137792021, guid: 40e25e86acd4ba3488afdb2aa9c9aab7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137792021, guid: 40e25e86acd4ba3488afdb2aa9c9aab7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.6293888
+      objectReference: {fileID: 0}
     - target: {fileID: 4428729156601833848, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
         type: 3}
       propertyPath: m_Name
@@ -72,6 +80,12 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 03641f84b34b577469d9fd30371f4b79,
+        type: 3}
+    - target: {fileID: 4428729157378619370, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
+        type: 3}
+      propertyPath: runeSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85bc84402ccab0c44887d94002ba21c6,
         type: 3}
     - target: {fileID: 4428729157378619370, guid: 40e25e86acd4ba3488afdb2aa9c9aab7,
         type: 3}

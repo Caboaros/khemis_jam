@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 137792021, guid: 40e25e86acd4ba3488afdb2aa9c9aab7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 137792021, guid: 40e25e86acd4ba3488afdb2aa9c9aab7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.9656741
+      objectReference: {fileID: 0}
+    - target: {fileID: 137792021, guid: 40e25e86acd4ba3488afdb2aa9c9aab7, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 137792023, guid: 40e25e86acd4ba3488afdb2aa9c9aab7, type: 3}
       propertyPath: activationDuration
       value: 6
