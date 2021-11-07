@@ -54,6 +54,7 @@ namespace _Game.Scripts.Player
             _rigidbody.DOMove(transform.position + ((transform.position - damagePoint).normalized) * .5f,
                 .25f);
             
+            PlayerController.Instance.Sounds.PlayDamageSound();
             PlayerController.Instance.Animations.PlayHitAnimation();
         }
 

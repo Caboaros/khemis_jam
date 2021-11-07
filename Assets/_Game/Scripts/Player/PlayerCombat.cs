@@ -191,6 +191,14 @@ namespace _Game.Scripts.Player
         private void MeleeAttack()
         {
             _currentAttackPoint.ApplyDamage(Damage);
+            PlayerController.Instance.Sounds.PlayAirHitSound();
+
+            if (_sequence == 3)
+            {
+                PlayerController.Instance.Sounds.PlayAttackSounds();
+            }
+
+
             /*
             RaycastHit2D[] hit = new RaycastHit2D[5];
 

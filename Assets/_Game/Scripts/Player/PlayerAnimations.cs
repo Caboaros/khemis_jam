@@ -117,5 +117,10 @@ namespace _Game.Scripts.Player
             _onThrow?.Invoke();
             _onThrow = null;
         }
+
+        public void OnStep()
+        {
+            PlayerController.Instance.Sounds.PlayStepsSounds(WorldEnum.Fn);
+        }
     }
 }

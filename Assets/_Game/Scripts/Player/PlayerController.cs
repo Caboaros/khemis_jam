@@ -13,6 +13,7 @@ namespace _Game.Scripts.Player
         [HideInInspector] public PlayerAnimations Animations;
         [HideInInspector] public PlayerMovement Movement;
         [HideInInspector] public PlayerInventory Inventory;
+        [HideInInspector] public PlayerSounds Sounds;
 
         private void Awake()
         {
@@ -26,6 +27,7 @@ namespace _Game.Scripts.Player
             Movement = GetComponent<PlayerMovement>();
             Inventory = GetComponent<PlayerInventory>();
             Animations = GetComponentInChildren<PlayerAnimations>();
+            Sounds = GetComponent<PlayerSounds>();
         }
 
         private void Start()

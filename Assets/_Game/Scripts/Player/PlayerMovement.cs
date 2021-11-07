@@ -104,4 +104,9 @@ namespace _Game.Scripts.Player
         Left = 2,
         Right = 3
     }
+
+    public enum WorldEnum
+    {
+        Br, Fn
+    }
 }

@@ -6891,6 +6891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f20804e5b35f68419a9bdd914d31dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 0}
+  _diff: {x: 0, y: 0}
 --- !u!255 &1955452182
 FixedJoint2D:
   m_ObjectHideFlags: 0
