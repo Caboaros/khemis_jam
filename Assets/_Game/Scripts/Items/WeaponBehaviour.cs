@@ -8,8 +8,8 @@ namespace _Game.Scripts.Items
     public class WeaponBehaviour : ItemBase
     {
         [PropertyOrder(0)] public SO_Weapon Data;
-        [Space] [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private TextMeshPro weaponName;
+        [Space] [SerializeField] protected SpriteRenderer spriteRenderer;
+        [SerializeField] protected TextMeshPro weaponName;
 
         private void Start()
         {

@@ -1,9 +1,12 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Game.Scripts.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
+        [SerializeField, ReadOnly] private MovementDirection _movementDirection;
+        [Space]
         [SerializeField] private float movementSpeed = 5;
         [Space] [SerializeField] private Transform rendererTransform;
 
@@ -15,7 +18,9 @@ namespace _Game.Scripts.Player
                 if (_movementDirection == value) return;
                 
                 _movementDirection = value;
+                
                 PlayerController.Instance.Animations.SetDirection(_movementDirection);
+                PlayerController.Instance.Combat.SetDirection(_movementDirection);
             }
         }
 
@@ -24,8 +29,6 @@ namespace _Game.Scripts.Player
             get => _canMove;
             set => _canMove = value;
         }
-
-        [SerializeField] private MovementDirection _movementDirection;
 
         [HideInInspector] public Vector2 inputDirection;
         
@@ -38,6 +41,8 @@ namespace _Game.Scripts.Player
             _rigidbody = GetComponent<Rigidbody2D>();
             _position = _rigidbody.position;
             _canMove = true;
+
+            MovementDirection = MovementDirection.Down;
         }
 
         public void StopMovement()
@@ -100,9 +105,10 @@ namespace _Game.Scripts.Player
 
     public enum MovementDirection
     {
-        Top,
-        Down,
-        Left,
-        Right
+        None = -1, 
+        Top = 0,
+        Down = 1,
+        Left = 2,
+        Right = 3
     }
 }

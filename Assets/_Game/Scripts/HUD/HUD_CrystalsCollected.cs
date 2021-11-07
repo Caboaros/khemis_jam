@@ -23,7 +23,7 @@ namespace _Game.Scripts.HUD
 
         private void OnCrystalCollected(CrystalsCollected eventData)
         {
-            crystalTransform.DOScale(1.2f, .3f).SetEase(Ease.InBack).onComplete = () =>
+            crystalTransform.DOScale(1.2f, .15f).SetEase(Ease.OutBack).onComplete = () =>
             {
                 crystalTransform.DOScale(1f, .5f).SetEase(Ease.OutBack);
             };

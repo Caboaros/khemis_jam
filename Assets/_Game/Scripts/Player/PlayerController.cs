@@ -35,14 +35,9 @@ namespace _Game.Scripts.Player
 
         private void Update()
         {
-            if (Input.GetButtonDown("Jump"))
-            {
-                Combat.StartAttack();
-            }
-
             if (Input.GetKeyDown(KeyCode.U))
             {
-                Life.TakeDamage(2);
+                Life.TakeDamage(2, Vector2.zero);
             }
 
             if (Input.GetKeyDown(KeyCode.I))

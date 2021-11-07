@@ -31,7 +31,7 @@ namespace _Game.Scripts.Items
             };
         }
 
-        public void SpawnAnimation()
+        public virtual void SpawnAnimation()
         {
             collider.enabled = false;
             spriteTransform.DOLocalMoveY(.5f, .3f).SetEase(Ease.OutCubic).onComplete = () =>

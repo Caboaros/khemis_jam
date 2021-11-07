@@ -13,7 +13,8 @@ namespace _Game.Scripts.Player
         [SerializeField] private SkeletonDataAsset backAsset;
         [SerializeField] private SkeletonDataAsset sideAsset;
         
-        private Action _onAttack;
+        private Action _onMeleeAttack;
+        private Action _onThrow;
         
         private static readonly int Walking = Animator.StringToHash("IsWalking");
         private static readonly int Attack = Animator.StringToHash("Attack");
@@ -23,17 +24,20 @@ namespace _Game.Scripts.Player
         private static readonly int Direction = Animator.StringToHash("Direction");
         private static readonly int Sequence = Animator.StringToHash("Sequence");
 
-        public bool IsWalking
+        public void PlayPunchAttackAnimation(Action onAttack, int sequence)
         {
-            set => animator.SetBool(Walking, value);
-        }
-
-        public void PlayAttackAnimation(Action onAttack, int sequence)
-        {
+            _onMeleeAttack = onAttack;
+            
             animator.SetInteger(Sequence, sequence);
             animator.SetTrigger(Attack);
+        }
+
+        public void PlayThrowAttack(Action onThrow)
+        {
+            _onThrow = onThrow;
             
-            _onAttack = onAttack;
+            animator.SetInteger(Sequence, 1);
+            animator.SetTrigger(Attack);
         }
 
         public void ResetSequence()
@@ -52,6 +56,11 @@ namespace _Game.Scripts.Player
             animator.SetFloat(Horizontal, Mathf.Abs(horizontal));
         }
 
+        public void PlayHitAnimation()
+        {
+            
+        }
+
         public void SetDirection(MovementDirection direction)
         {
             mecanim.ClearState();
@@ -60,9 +69,11 @@ namespace _Game.Scripts.Player
             {
                 case MovementDirection.Top:
                     mecanim.skeletonDataAsset = backAsset;
+                    mecanim.initialFlipX = false;
                     break;
                 case MovementDirection.Down:
                     mecanim.skeletonDataAsset = frontAsset;
+                    mecanim.initialFlipX = false;
                     break;
                 case MovementDirection.Left:
                 case MovementDirection.Right:
@@ -80,13 +91,19 @@ namespace _Game.Scripts.Player
 
         public void OnAttackEvent()
         {
-            _onAttack?.Invoke();
+            _onMeleeAttack?.Invoke();
         }
 
         public void OnEndAttackEvent()
         {
             PlayerController.Instance.Combat.canAttack = true;
             PlayerController.Instance.Movement.CanMove = true;
+        }
+
+        public void OnThrowAttackEvent()
+        {
+            _onThrow?.Invoke();
+            _onThrow = null;
         }
     }
 }

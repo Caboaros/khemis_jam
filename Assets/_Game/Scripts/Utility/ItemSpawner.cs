@@ -12,6 +12,7 @@ namespace _Game.Scripts.Utility
         [SerializeField] private CrystalBehaviour crystalPrefab;
         [SerializeField] private HeartBehaviour heartPrefab;
         [Space] [SerializeField] private List<WeaponBehaviour> weaponsList;
+        [Space] [SerializeField] private List<ThrowableItem> throwableItemsList;
 
         private void Awake()
         {
@@ -39,16 +40,28 @@ namespace _Game.Scripts.Utility
         {
             SpawnItem(GetWeaponPrefabById(weaponId), position);
         }
-
-        public static void SpawnItem(ItemBase item, Vector2 position)
+        
+        public static void SpawnThrowable(string throwableId, Vector2 position, Vector2 direction, float speed, LayerMask layer)
         {
-            ItemBase newItem = Instantiate(item, position, quaternion.identity);
+            SpawnItem(GetThrowablePrefabById(throwableId), position).Throw(direction, speed, layer);
+        }
+
+        public static T SpawnItem<T>(T item, Vector2 position) where T : ItemBase
+        {
+            T newItem = Instantiate(item, position, quaternion.identity);
             newItem.SpawnAnimation();
+
+            return newItem;
         }
 
         private static WeaponBehaviour GetWeaponPrefabById(string id)
         {
             return _instance.weaponsList.Find(weapon => weapon.Data.id == id);
+        }
+        
+        private static ThrowableItem GetThrowablePrefabById(string id)
+        {
+            return _instance.throwableItemsList.Find(weapon => weapon.Data.id == id);
         }
     }
 }

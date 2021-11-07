@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Game.Scripts.Enemies
@@ -11,7 +9,7 @@ namespace _Game.Scripts.Enemies
 
         public bool isBoss;
 
-        protected override void Die()
+        public override void Die()
         {
             if (!isBoss)
                 sourceSpawner.OnSpawnedEnemyDies();
