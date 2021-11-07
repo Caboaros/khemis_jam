@@ -6,8 +6,7 @@ namespace _Game.Scripts.Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField, ReadOnly] private MovementDirection _movementDirection;
-        [Space]
-        [SerializeField] private float movementSpeed = 5;
+        [Space] [SerializeField] private float movementSpeed = 5;
         [Space] [SerializeField] private Transform rendererTransform;
 
         public MovementDirection MovementDirection
@@ -16,9 +15,9 @@ namespace _Game.Scripts.Player
             set
             {
                 if (_movementDirection == value) return;
-                
+
                 _movementDirection = value;
-                
+
                 PlayerController.Instance.Animations.SetDirection(_movementDirection);
                 PlayerController.Instance.Combat.SetDirection(_movementDirection);
             }
@@ -31,7 +30,7 @@ namespace _Game.Scripts.Player
         }
 
         [HideInInspector] public Vector2 inputDirection;
-        
+
         private bool _canMove;
         private Vector2 _position = Vector2.zero;
         private Rigidbody2D _rigidbody;
@@ -51,37 +50,31 @@ namespace _Game.Scripts.Player
             _rigidbody.velocity = Vector2.zero;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (!_canMove) return;
 
             float vertical = Input.GetAxis("Vertical");
             float horizontal = Input.GetAxis("Horizontal");
 
-            if (horizontal != 0)
-            {
-                _position.x += horizontal * movementSpeed * Time.deltaTime;
-            }
-
-            if (vertical != 0)
-            {
-                _position.y += vertical * movementSpeed * Time.deltaTime;
-            }
+            _position.x = horizontal * movementSpeed * Time.deltaTime;
+            _position.y = vertical * movementSpeed * Time.deltaTime;
             
             PlayerController.Instance.Animations.MovementAnimation(vertical, horizontal);
 
             if (vertical == 0 && horizontal == 0)
             {
                 PlayerController.Instance.Status = PlayerStatus.Idle;
+                _rigidbody.velocity = Vector2.zero;
                 return;
             }
-            
+
             PlayerController.Instance.Status = PlayerStatus.Walking;
-            
+
             inputDirection = new Vector2(horizontal, vertical);
             MovementDirection = GetDirection(inputDirection);
 
-            _rigidbody.MovePosition(_position);
+            _rigidbody.velocity = _position;
         }
 
         private MovementDirection GetDirection(Vector2 input)
@@ -105,7 +98,7 @@ namespace _Game.Scripts.Player
 
     public enum MovementDirection
     {
-        None = -1, 
+        None = -1,
         Top = 0,
         Down = 1,
         Left = 2,

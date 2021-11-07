@@ -29,19 +29,15 @@ namespace _Game.Scripts.Enemies
 
         private void Update()
         {
-            /*
             if (State == EnemyState.Chase)
             {
+                _controller.Movement.ChasePlayer(_player.GetDamagePoint(transform.position));
+
                 if (_controller.Movement.RemainingDistance <= _controller.Movement.StoppingDistance)
                 {
                     Attack();
                 }
-                else
-                {
-                    _controller.Movement.ChasePlayer(_player.GetDamagePoint(transform.position));
-                }
             }
-            */
         }
 
         public void StartPatrol()
@@ -88,7 +84,7 @@ namespace _Game.Scripts.Enemies
 
         public void ChasePlayer(PlayerLife player)
         {
-            return;
+            _controller.Movement.StopMovement();
             _player = player;
             State = EnemyState.Chase;
         }

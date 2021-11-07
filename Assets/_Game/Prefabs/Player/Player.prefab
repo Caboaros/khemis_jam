@@ -374,7 +374,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.49658793, y: 0.000000059197887}
-  m_Size: {x: 1.9931798, y: 1.0000027}
+  m_Size: {x: 1.9931798, y: 1.6}
   m_Direction: 1
 --- !u!1 &2972158013683814845
 GameObject:
@@ -1006,7 +1006,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5242281850032938065}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementDirection: -1
-  movementSpeed: 4
+  movementSpeed: 300
   rendererTransform: {fileID: 5242281850260858224}
   inputDirection: {x: 0, y: 0}
 --- !u!114 &5242281850032938063
@@ -1427,7 +1427,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.3521262, y: 0.000000041976712}
-  m_Size: {x: 1.7042545, y: 1.0000017}
+  m_Size: {x: 1.7042545, y: 1.6}
   m_Direction: 1
 --- !u!1 &6456064983257987631
 GameObject:
@@ -1517,7 +1517,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.8848306, y: 0.00000010548001}
-  m_Size: {x: 2.7696636, y: 1.0000021}
+  m_Size: {x: 2.7696636, y: 1.6}
   m_Direction: 1
 --- !u!1 &6909264707948148829
 GameObject:
@@ -1607,7 +1607,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.41532785, y: -0.00000004951093}
-  m_Size: {x: 1.8306618, y: 1.0000042}
+  m_Size: {x: 1.8306618, y: 1.6}
   m_Direction: 1
 --- !u!1 &7856707395908201229
 GameObject:
@@ -1667,7 +1667,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.5507615, y: -0.00000006565588}
-  m_Size: {x: 2.101528, y: 1.0000031}
+  m_Size: {x: 2.101528, y: 1.6}
   m_Direction: 1
 --- !u!1 &8479112951881116918
 GameObject:
@@ -1787,7 +1787,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.92997515, y: -0.00000011086166}
-  m_Size: {x: 2.8599555, y: 1.0000038}
+  m_Size: {x: 2.8599555, y: 1.6}
   m_Direction: 1
 --- !u!1 &8999541023749128448
 GameObject:

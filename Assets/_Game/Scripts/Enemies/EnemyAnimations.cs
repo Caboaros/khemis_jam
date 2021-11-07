@@ -18,7 +18,7 @@ namespace _Game.Scripts.Enemies
         
         private static readonly int MovSpeed = Animator.StringToHash("MovSpeed");
         private static readonly int Hit = Animator.StringToHash("Hit");
-        private static readonly int Attack = Animator.StringToHash("Attack");
+        private static readonly int Attack = Animator.StringToHash("IsAttacking");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
 
         public void Init(EnemyController controller)
@@ -65,7 +65,7 @@ namespace _Game.Scripts.Enemies
             _onEndAttack = onEndAttack;
             
             animator.SetInteger(AttackIndex, sequence);
-            animator.SetTrigger(Attack);
+            animator.SetBool(Attack, true);
         }
         
         
@@ -77,6 +77,7 @@ namespace _Game.Scripts.Enemies
 
         public void OnEndAttackEvent()
         {
+            animator.SetBool(Attack, false);
             _onEndAttack?.Invoke();
             _onEndAttack = null;
         }

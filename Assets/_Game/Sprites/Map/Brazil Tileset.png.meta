@@ -8,6 +8,39 @@ TextureImporter:
   - first:
       213: -4332803947550222538
     second: Brazil Tileset_1
+  - first:
+      213: 7980442938272751853
+    second: Brazil Tileset_2
+  - first:
+      213: 3231595212708328688
+    second: Brazil Tileset_3
+  - first:
+      213: 8688406018590102785
+    second: Brazil Tileset_4
+  - first:
+      213: -1834112698345044845
+    second: Brazil Tileset_5
+  - first:
+      213: 1587182340199616354
+    second: Brazil Tileset_6
+  - first:
+      213: 3455567409196975212
+    second: Brazil Tileset_7
+  - first:
+      213: 3675244567771837707
+    second: Brazil Tileset_8
+  - first:
+      213: 5211111631881275187
+    second: Brazil Tileset_9
+  - first:
+      213: 534327039884359362
+    second: Brazil Tileset_10
+  - first:
+      213: -4621610413630208780
+    second: Brazil Tileset_11
+  - first:
+      213: -272166251999404611
+    second: Brazil Tileset_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -51,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 700
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -108,15 +141,19 @@ TextureImporter:
       name: Brazil Tileset_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 256
-        width: 666
-        height: 768
+        x: 0
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -70, y: 128}
+        - {x: -70, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
       tessellationDetail: 0
       bones: []
       spriteID: 2528c28f91dcae230800000000000000
@@ -129,19 +166,314 @@ TextureImporter:
       name: Brazil Tileset_1
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
+        x: 256
+        y: 768
         width: 256
-        height: 1024
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -118, y: 128}
+        - {x: -128, y: 123}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 124}
+        - {x: 123, y: 128}
       tessellationDetail: 0
       bones: []
       spriteID: 637dbd014c9ced3c0800000000000000
       internalID: -4332803947550222538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 70, y: -128}
+        - {x: 70, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0a506f19a30ce60800000000000000
+      internalID: 7980442938272751853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6, y: 128}
+        - {x: -8, y: -128}
+        - {x: 126, y: -128}
+        - {x: 128, y: -125}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4355769bee8dc20800000000000000
+      internalID: 3231595212708328688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -62, y: 128}
+        - {x: -65, y: 125}
+        - {x: -68, y: 119}
+        - {x: -71, y: 50}
+        - {x: -71, y: -123}
+        - {x: -66, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105dd62ad3b639870800000000000000
+      internalID: 8688406018590102785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3944c19e73ceb86e0800000000000000
+      internalID: -1834112698345044845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 67, y: 126}
+        - {x: 62, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 70, y: -128}
+        - {x: 71, y: -119}
+        - {x: 71, y: 55}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f0f5dddedc60610800000000000000
+      internalID: 1587182340199616354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -7, y: 128}
+        - {x: -6, y: 57}
+        - {x: 128, y: 58}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c644a921044a4ff20800000000000000
+      internalID: 3455567409196975212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -67, y: 128}
+        - {x: -78, y: 102}
+        - {x: -78, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0579bc4677110330800000000000000
+      internalID: 3675244567771837707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33780376b66915840800000000000000
+      internalID: 5211111631881275187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 65, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -126}
+        - {x: -127, y: -128}
+        - {x: 65, y: -128}
+        - {x: 78, y: -114}
+        - {x: 78, y: 23}
+        - {x: 74, y: 120}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6713e9c9f4a6700800000000000000
+      internalID: 534327039884359362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: -124}
+        - {x: -124, y: -128}
+        - {x: 6, y: -128}
+        - {x: 4, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4435da0ddbcdfb0800000000000000
+      internalID: -4621610413630208780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brazil Tileset_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 53}
+        - {x: 5, y: 55}
+        - {x: 6, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbdd9bd5c32193cf0800000000000000
+      internalID: -272166251999404611
       vertices: []
       indices: 
       edges: []
