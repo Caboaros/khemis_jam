@@ -1,4 +1,5 @@
 ﻿using _Game.Scripts.HUD;
+using Blazewing.DataController;
 using Blazewing.DataEvent;
 using UnityEngine;
 
@@ -14,7 +15,11 @@ namespace _Game.Scripts.Player
             set
             {
                 _crystalCollected = Mathf.Clamp(value, 0, 100);
-                DataEvent.Notify(new CrystalsCollected(_crystalCollected));
+
+                CrystalsCollected crystalsCollected = new CrystalsCollected(_crystalCollected);
+
+                DataEvent.Notify(crystalsCollected);
+                DataController.Add(crystalsCollected);
             }
         }
 
