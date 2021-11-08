@@ -7,6 +7,8 @@ namespace _Game.Scripts.Enemies
 {
     public class EnemyLife : MonoBehaviour, IMortal
     {
+        public EnemySpawner sourceSpawner;
+
         [SerializeField] private bool isImmortal;
         [Space]
         [SerializeField] private int maxLife = 3;
@@ -62,6 +64,9 @@ namespace _Game.Scripts.Enemies
             _controller.Drop.DropCrystal();
 
             Instantiate(poofEffectPrefab, transform.position, Quaternion.identity);
+
+            sourceSpawner.OnSpawnedEnemyDies();
+
             Destroy(gameObject);
         }
 
