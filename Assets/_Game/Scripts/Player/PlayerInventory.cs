@@ -39,7 +39,9 @@ namespace _Game.Scripts.Player
             {
                 if (item == null) continue;
 
-                if (item.transform.root.TryGetComponent(out ICollectable collectable))
+                var collectable = item.GetComponentInParent<ICollectable>();
+
+                if (collectable != null)
                 {
                     collectable.OnCollect(PlayerController.Instance);
                 }

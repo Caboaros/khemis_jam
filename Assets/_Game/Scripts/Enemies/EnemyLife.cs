@@ -48,11 +48,6 @@ namespace _Game.Scripts.Enemies
             HeartsAmount = maxLife;
         }
 
-        private void OnMouseDown()
-        {
-            TakeDamage(1, transform.position);
-        }
-
         public void ApplyStun(float duration)
         {
             
@@ -65,7 +60,8 @@ namespace _Game.Scripts.Enemies
 
             Instantiate(poofEffectPrefab, transform.position, Quaternion.identity);
 
-            sourceSpawner.OnSpawnedEnemyDies();
+            if(sourceSpawner)
+                sourceSpawner.OnSpawnedEnemyDies();
 
             Destroy(gameObject);
         }

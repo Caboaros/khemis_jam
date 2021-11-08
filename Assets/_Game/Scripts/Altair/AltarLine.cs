@@ -17,6 +17,8 @@ public class AltarLine : MonoBehaviour
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
+
+        ActivateLine();
     }
 
     public void ActivateLine()

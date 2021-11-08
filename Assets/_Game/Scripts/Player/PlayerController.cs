@@ -37,15 +37,15 @@ namespace _Game.Scripts.Player
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.U))
-            {
-                Life.TakeDamage(2, Vector2.zero);
-            }
+            //if (Input.GetKeyDown(KeyCode.U))
+            //{
+            //    Life.TakeDamage(2, Vector2.zero);
+            //}
 
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                Life.Heal(2);
-            }
+            //if (Input.GetKeyDown(KeyCode.I))
+            //{
+            //    Life.Heal(2);
+            //}
 
             if (Input.GetKeyDown(KeyCode.R))
             {

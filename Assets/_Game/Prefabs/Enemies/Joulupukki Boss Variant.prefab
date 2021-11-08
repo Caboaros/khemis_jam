@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5408762241793241208
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3220364584927258364, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220364584927258364, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: maxLife
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147940, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_Name
+      value: Joulupukki Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966862624253147941, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372346615022801385, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b9b9d3b8860f604aa5fa40e9f10a04b, type: 3}

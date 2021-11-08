@@ -83,5 +83,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7164061337546292332, guid: 26d186fd39488164cb210c7224ad7903,
+        type: 3}
+      propertyPath: treeOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 9767b75a2ab75464f9939532a48c007e,
+        type: 3}
+    - target: {fileID: 7164061337546292332, guid: 26d186fd39488164cb210c7224ad7903,
+        type: 3}
+      propertyPath: treeOff
+      value: 
+      objectReference: {fileID: 21300000, guid: 599d23976a77575428bfa4bb8e8c07e7,
+        type: 3}
+    - target: {fileID: 7164061337546292332, guid: 26d186fd39488164cb210c7224ad7903,
+        type: 3}
+      propertyPath: priceToActivate
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d186fd39488164cb210c7224ad7903, type: 3}

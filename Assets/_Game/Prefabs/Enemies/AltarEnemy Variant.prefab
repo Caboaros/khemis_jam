@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ce7a7135c4df0449a12498b2107650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sourceSpawner: {fileID: 0}
   isImmortal: 0
-  maxLife: 3
+  maxLife: 8
   heartsAmountText: {fileID: 1275930548411493334}
   poofEffectPrefab: {fileID: 4575044643930836757, guid: c33fd8103c228e446be9251f1ac14bc5,
     type: 3}

@@ -76,7 +76,7 @@ namespace _Game.Scripts.Player
 
             DoFadeOut endGameFadeOut = new DoFadeOut()
             {
-                onEndFade = () => SceneManager.LoadScene("GameOver")
+                onEndFade = () => GameOverController.LoadScene(false)
             };
 
             DataEvent.Notify<DoFadeOut>(endGameFadeOut);

@@ -33,7 +33,7 @@ namespace _Game.Scripts.Player
 
         private bool _canMove;
         private Vector2 _position = Vector2.zero;
-        private Rigidbody2D _rigidbody;
+        public Rigidbody2D _rigidbody;
 
         private void Start()
         {
