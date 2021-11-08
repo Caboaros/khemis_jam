@@ -99,6 +99,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
         type: 3}
+      propertyPath: maxEnemyCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
+        type: 3}
       propertyPath: possibleEnemies.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -182,6 +187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
+        type: 3}
+      propertyPath: maxEnemyCount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
         type: 3}
@@ -271,6 +281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
         type: 3}
+      propertyPath: maxEnemyCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
+        type: 3}
       propertyPath: possibleEnemies.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -357,6 +372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
         type: 3}
+      propertyPath: maxEnemyCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
+        type: 3}
       propertyPath: possibleEnemies.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -440,6 +460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
+        type: 3}
+      propertyPath: maxEnemyCount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3930435517639287783, guid: 7b87983106d551c4e9daca351c68cfd8,
         type: 3}

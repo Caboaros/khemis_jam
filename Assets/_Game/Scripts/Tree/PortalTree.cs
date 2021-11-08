@@ -9,8 +9,6 @@ using _Game.Scripts.Player;
 public class PortalTree : MonoBehaviour, IInteractable
 {
     [SerializeField]
-    private PlayerController player;
-    [SerializeField]
     private Transform teleportDestination;
 
     public int priceToActivate;
@@ -60,7 +58,7 @@ public class PortalTree : MonoBehaviour, IInteractable
     private void TeleportPlayer(OnTeleportFadeOutEnd _event)
     {
         DataEvent.Unregister<OnTeleportFadeOutEnd>(TeleportPlayer);
-        player.transform.position = teleportDestination.position;
+        PlayerController.Instance.transform.position = teleportDestination.position;
         DataEvent.Notify(new OnTeleportFadeInStart());
     }
 

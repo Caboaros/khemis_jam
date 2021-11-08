@@ -3,14 +3,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HubPuzzle : MonoBehaviour
 {
+    public HubPuzzle otherHub;
+
     [Header("Runes:")]
     public HubRunes[] hubRunes;
 
-    [SerializeField, ReadOnly]
-    private int runesActivated = 0;
+    [ReadOnly]
+    public int runesActivated = 0;
 
     [Header("Circles:")]
     public HubCircle[] hubCircles;
@@ -23,6 +26,11 @@ public class HubPuzzle : MonoBehaviour
         hubRunes[index].ActivateRune();
 
         runesActivated++;
+
+        if(otherHub.runesActivated != runesActivated)
+        {
+            otherHub.ActivateRune(index);
+        }
 
         if(runesActivated == 4)
         {
@@ -60,7 +68,7 @@ public class HubPuzzle : MonoBehaviour
 
     private void OnFinishPuzzle()
     {
-        
+        SceneManager.LoadScene("Victory");
     }
 
 }

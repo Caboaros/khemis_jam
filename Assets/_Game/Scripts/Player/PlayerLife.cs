@@ -3,6 +3,7 @@ using _Game.Scripts.Shared;
 using Blazewing.DataEvent;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Game.Scripts.Player
 {
@@ -72,6 +73,13 @@ namespace _Game.Scripts.Player
         {
             _isDead = true;
             _onPlayerDied?.Invoke();
+
+            DoFadeOut endGameFadeOut = new DoFadeOut()
+            {
+                onEndFade = () => SceneManager.LoadScene("GameOver")
+            };
+
+            DataEvent.Notify<DoFadeOut>(endGameFadeOut);
         }
 
         public Transform GetDamagePoint(Vector2 enemyPosition)
