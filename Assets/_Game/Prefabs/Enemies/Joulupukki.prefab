@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8345784859539700836
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1454025461766045342, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454025461766045342, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160838, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_Name
+      value: Joulupukki
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897131999795160839, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178752050754427665, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: skeletonDataAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f43ef13a5dee7b4488ef2302f837dfe0,
+        type: 2}
+    - target: {fileID: 4302001847311276741, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 192d6b6ebaac84949b428cf84cdb7d9d, type: 2}
+    - target: {fileID: 7480689824262000075, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141348650286626927, guid: e22c4b8ed13ffc24ebf514a40824061d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2906b6b8bde28fe4e93e739b8a610b60, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e22c4b8ed13ffc24ebf514a40824061d, type: 3}

@@ -1,18 +1,20 @@
-﻿using System;
+﻿using _Game.Scripts.Shared;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
 namespace _Game.Scripts.Enemies
 {
-    public class EnemyLife : MonoBehaviour
+    public class EnemyLife : MonoBehaviour, IMortal
     {
         [SerializeField] private bool isImmortal;
         [Space]
         [SerializeField] private int maxLife = 3;
         [SerializeField] private TextMeshProUGUI heartsAmountText;
+        [Space] [SerializeField] private GameObject poofEffectPrefab;
+        [Space] [SerializeField] private EnemyAnimations animations;
 
-
-        private EnemyDrop _drop;
+        private EnemyController _controller;
         private Rigidbody2D _rigidbody;
         private int _currentHeartsAmount;
         private bool _isDead;
@@ -35,14 +37,12 @@ namespace _Game.Scripts.Enemies
             }
         }
 
-        private void Awake()
+        public void Init(EnemyController controller)
         {
+            _controller = controller;
+            
             _rigidbody = GetComponent<Rigidbody2D>();
-            _drop = GetComponent<EnemyDrop>();
-        }
-
-        private void Start()
-        {
+            
             HeartsAmount = maxLife;
         }
 
@@ -51,21 +51,36 @@ namespace _Game.Scripts.Enemies
             TakeDamage(1, transform.position);
         }
 
-        public void TakeDamage(int damage, Vector3 damageSourcePosition)
+        public void ApplyStun(float duration)
+        {
+            
+        }
+
+        public virtual void Die()
+        {
+            _isDead = true;
+            _controller.Drop.DropCrystal();
+
+            Instantiate(poofEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+
+        public void TakeDamage(int damage, Vector3 damagePoint)
         {
             if (!isImmortal)
             {
                 HeartsAmount -= damage;
             }
 
-            _rigidbody.AddForce((transform.position - damageSourcePosition).normalized * 2, ForceMode2D.Impulse);
+            _rigidbody.DOMove(transform.position + ((transform.position - damagePoint).normalized) * .5f,
+                .25f);
+            
+            animations.PlayHitAnimation();
         }
 
-        protected virtual void Die()
+        public void Heal(int amount)
         {
-            _isDead = true;
-            _drop.DropCrystal();
-            Destroy(gameObject);
+            throw new System.NotImplementedException();
         }
     }
 }

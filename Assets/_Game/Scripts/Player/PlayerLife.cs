@@ -1,16 +1,21 @@
 ﻿using System;
+using _Game.Scripts.Shared;
 using Blazewing.DataEvent;
+using DG.Tweening;
 using UnityEngine;
 
 namespace _Game.Scripts.Player
 {
-    public class PlayerLife : MonoBehaviour
+    public class PlayerLife : MonoBehaviour, IMortal
     {
-        [SerializeField] private int maxHearts = 5;
+        public int maxHearts = 5;
+        [Space] [SerializeField] private Transform damagePointLeft;
+        [SerializeField] private Transform damagePointRight;
         
         private bool _isDead;
         private int _currentHeartAmount;
         private Action _onPlayerDied;
+        private Rigidbody2D _rigidbody;
 
         public int HeartsAmount
         {
@@ -29,7 +34,12 @@ namespace _Game.Scripts.Player
                 }
             }
         }
-        
+
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+        }
+
         public void Init(Action onPlayerDied)
         {
             _onPlayerDied = onPlayerDied;
@@ -37,9 +47,15 @@ namespace _Game.Scripts.Player
             HeartsAmount = maxHearts;
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, Vector3 damagePoint)
         {
             HeartsAmount -= damage;
+            
+            _rigidbody.DOMove(transform.position + ((transform.position - damagePoint).normalized) * .5f,
+                .25f);
+            
+            PlayerController.Instance.Sounds.PlayDamageSound();
+            PlayerController.Instance.Animations.PlayHitAnimation();
         }
 
         public void Heal(int amount)
@@ -47,10 +63,30 @@ namespace _Game.Scripts.Player
             HeartsAmount += amount;
         }
 
-        private void Die()
+        public void ApplyStun(float duration)
+        {
+            
+        }
+
+        public void Die()
         {
             _isDead = true;
             _onPlayerDied?.Invoke();
+        }
+
+        public Transform GetDamagePoint(Vector2 enemyPosition)
+        {
+            if (enemyPosition.x < transform.position.x)
+            {
+                return damagePointLeft;
+            }
+
+            if (enemyPosition.x > transform.position.x)
+            {
+                return damagePointRight;
+            }
+
+            return damagePointLeft;
         }
     }
 

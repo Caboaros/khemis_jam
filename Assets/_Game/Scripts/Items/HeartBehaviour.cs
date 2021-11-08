@@ -6,9 +6,10 @@ namespace _Game.Scripts.Items
     {
         public override void OnCollect(PlayerController player)
         {
-            player.Life.Heal(1);
-        
-            Destroy(gameObject);
+            MoveToPlayer(player.transform, () =>
+            {
+                player.Life.Heal(1);
+            });
         }
     }
 }

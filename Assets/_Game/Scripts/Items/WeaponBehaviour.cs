@@ -8,8 +8,8 @@ namespace _Game.Scripts.Items
     public class WeaponBehaviour : ItemBase
     {
         [PropertyOrder(0)] public SO_Weapon Data;
-        [Space] [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private TextMeshPro weaponName;
+        [Space] [SerializeField] protected SpriteRenderer spriteRenderer;
+        [SerializeField] protected TextMeshPro weaponName;
 
         private void Start()
         {
@@ -30,7 +30,14 @@ namespace _Game.Scripts.Items
 
         public override void OnCollect(PlayerController player)
         {
-            player.Combat.EquipWeapon(Data);
+            if (player.Combat.EquipWeapon(Data))
+            {
+                DestroyObject();
+            }
+        }
+        
+        protected void DestroyObject()
+        {
             Destroy(gameObject);
         }
     }

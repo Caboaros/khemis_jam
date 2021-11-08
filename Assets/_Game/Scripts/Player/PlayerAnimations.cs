@@ -12,25 +12,50 @@ namespace _Game.Scripts.Player
         [SerializeField] private SkeletonDataAsset frontAsset;
         [SerializeField] private SkeletonDataAsset backAsset;
         [SerializeField] private SkeletonDataAsset sideAsset;
+        [Space]
+        [SerializeField] private RuntimeAnimatorController handAnimatorController;
+        [SerializeField] private RuntimeAnimatorController whipAnimatorController;
         
-        private Action _onAttack;
-        
-        private static readonly int Walking = Animator.StringToHash("IsWalking");
+        private Action _onMeleeAttack;
+        private Action _onThrow;
+
+        public bool HasWhip
+        {
+            set
+            {
+                animator.runtimeAnimatorController = value ? whipAnimatorController : handAnimatorController;
+                animator.SetInteger(Sequence, 0);
+                animator.SetInteger(Direction, (int)PlayerController.Instance.Movement.MovementDirection);
+            }
+        }
+
         private static readonly int Attack = Animator.StringToHash("Attack");
         private static readonly int Die = Animator.StringToHash("Die");
         private static readonly int Vertical = Animator.StringToHash("Vertical");
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
         private static readonly int Direction = Animator.StringToHash("Direction");
+        private static readonly int Sequence = Animator.StringToHash("Sequence");
+        private static readonly int Hit = Animator.StringToHash("Hit");
 
-        public bool IsWalking
+        public void PlayPunchAttackAnimation(Action onAttack, int sequence)
         {
-            set => animator.SetBool(Walking, value);
+            _onMeleeAttack = onAttack;
+            
+            animator.SetInteger(Sequence, sequence);
+            animator.SetTrigger(Attack);
         }
 
-        public void PlayAttackAnimation(Action onAttack)
+        public void PlayThrowAttack(Action onThrow)
         {
+            _onThrow = onThrow;
+            
+            animator.SetInteger(Sequence, 1);
             animator.SetTrigger(Attack);
-            _onAttack = onAttack;
+        }
+
+        public void ResetSequence()
+        {
+            animator.SetInteger(Sequence, 0);
         }
 
         public void PlayDyingAnimation()
@@ -44,6 +69,11 @@ namespace _Game.Scripts.Player
             animator.SetFloat(Horizontal, Mathf.Abs(horizontal));
         }
 
+        public void PlayHitAnimation()
+        {
+            animator.SetTrigger(Hit);
+        }
+
         public void SetDirection(MovementDirection direction)
         {
             mecanim.ClearState();
@@ -52,9 +82,11 @@ namespace _Game.Scripts.Player
             {
                 case MovementDirection.Top:
                     mecanim.skeletonDataAsset = backAsset;
+                    mecanim.initialFlipX = false;
                     break;
                 case MovementDirection.Down:
                     mecanim.skeletonDataAsset = frontAsset;
+                    mecanim.initialFlipX = false;
                     break;
                 case MovementDirection.Left:
                 case MovementDirection.Right:
@@ -66,13 +98,29 @@ namespace _Game.Scripts.Player
             }
             
             mecanim.Initialize(true);
-            
             animator.SetInteger(Direction, (int)direction);
         }
 
         public void OnAttackEvent()
         {
-            _onAttack?.Invoke();
+            _onMeleeAttack?.Invoke();
+        }
+
+        public void OnEndAttackEvent()
+        {
+            PlayerController.Instance.Combat.canAttack = true;
+            PlayerController.Instance.Movement.CanMove = true;
+        }
+
+        public void OnThrowAttackEvent()
+        {
+            _onThrow?.Invoke();
+            _onThrow = null;
+        }
+
+        public void OnStep()
+        {
+            PlayerController.Instance.Sounds.PlayStepsSounds(WorldEnum.Fn);
         }
     }
 }

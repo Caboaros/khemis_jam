@@ -1,10 +1,12 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Game.Scripts.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] private float movementSpeed = 5;
+        [SerializeField, ReadOnly] private MovementDirection _movementDirection;
+        [Space] [SerializeField] private float movementSpeed = 5;
         [Space] [SerializeField] private Transform rendererTransform;
 
         public MovementDirection MovementDirection
@@ -13,9 +15,11 @@ namespace _Game.Scripts.Player
             set
             {
                 if (_movementDirection == value) return;
-                
+
                 _movementDirection = value;
-                _animation.SetDirection(_movementDirection);
+
+                PlayerController.Instance.Animations.SetDirection(_movementDirection);
+                PlayerController.Instance.Combat.SetDirection(_movementDirection);
             }
         }
 
@@ -25,27 +29,19 @@ namespace _Game.Scripts.Player
             set => _canMove = value;
         }
 
-        [SerializeField] private MovementDirection _movementDirection;
-
         [HideInInspector] public Vector2 inputDirection;
-        
+
         private bool _canMove;
         private Vector2 _position = Vector2.zero;
-        private Vector2 _rendererPosition;
-        private Transform _transform;
         private Rigidbody2D _rigidbody;
-        private float _sin = 0;
-        private PlayerAnimations _animation;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            _animation = GetComponentInChildren<PlayerAnimations>();
-            
-            _transform = transform;
             _position = _rigidbody.position;
-            _rendererPosition = rendererTransform.localPosition;
             _canMove = true;
+
+            MovementDirection = MovementDirection.Down;
         }
 
         public void StopMovement()
@@ -61,28 +57,24 @@ namespace _Game.Scripts.Player
             float vertical = Input.GetAxis("Vertical");
             float horizontal = Input.GetAxis("Horizontal");
 
-            if (horizontal != 0)
+            _position.x = horizontal * movementSpeed * Time.deltaTime;
+            _position.y = vertical * movementSpeed * Time.deltaTime;
+            
+            PlayerController.Instance.Animations.MovementAnimation(vertical, horizontal);
+
+            if (vertical == 0 && horizontal == 0)
             {
-                _position.x += horizontal * movementSpeed * Time.deltaTime;
+                PlayerController.Instance.Status = PlayerStatus.Idle;
+                _rigidbody.velocity = Vector2.zero;
+                return;
             }
 
-            if (vertical != 0)
-            {
-                _position.y += vertical * movementSpeed * Time.deltaTime;
-            }
+            PlayerController.Instance.Status = PlayerStatus.Walking;
 
-            _sin += Time.deltaTime * 25 * vertical;
-            _rendererPosition.y = Mathf.Sin(_sin) / 15f;
-            //rendererTransform.localPosition = _rendererPosition;
-            
-            _animation.MovementAnimation(vertical, horizontal);
-
-            if (vertical == 0 && horizontal == 0) return;
-            
             inputDirection = new Vector2(horizontal, vertical);
             MovementDirection = GetDirection(inputDirection);
 
-            _rigidbody.MovePosition(_position);
+            _rigidbody.velocity = _position;
         }
 
         private MovementDirection GetDirection(Vector2 input)
@@ -106,9 +98,15 @@ namespace _Game.Scripts.Player
 
     public enum MovementDirection
     {
-        Top,
-        Down,
-        Left,
-        Right
+        None = -1,
+        Top = 0,
+        Down = 1,
+        Left = 2,
+        Right = 3
+    }
+
+    public enum WorldEnum
+    {
+        Br, Fn
     }
 }

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.h8man.2d.navmeshplus": "https://github.com/h8man/NavMeshPlus.git#master",
     "com.liga.data-controller": "https://gitlab.com/LDJ/com.liga.data-controller.git",
     "com.liga.data-event": "https://gitlab.com/LDJ/com.liga.data-event.git",
     "com.unity.2d.animation": "3.2.13",
